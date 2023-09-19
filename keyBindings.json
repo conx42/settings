@@ -1,0 +1,29 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "alt+b",
+        "command": "breadcrumbs.toggle",
+        // "when": "!config.breadcrumbs.enabled"
+    },
+    {
+        "key": "alt+a",
+        "command": "workbench.action.toggleActivityBarVisibility",
+    },
+    {
+        "key": "alt+s",
+        "command": "workbench.action.toggleStatusbarVisibility",
+    },
+    {
+        "key": "alt+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.toggleTabsVisibility"
+    }
+]

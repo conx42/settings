@@ -1,0 +1,362 @@
+{
+    "editor.mouseWheelZoom": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.guides.bracketPairs": true,
+    "editor.fontFamily": "'Operator Mono Light',FantasqueSansMono NFM,Fira code, cascadia code,Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator} SuRFeR",
+    "code-runner.saveFileBeforeRun": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.suggest.showStatusBar": true,
+    "workbench.startupEditor": "none",
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "nebulaOni.update.restoreConfiguration": {
+      "themeSettings": {
+        "background": "Grey",
+        "main": "Bumblebee",
+        "highlight": "Ultra Violet",
+        "focusBorder": "ON",
+        "fontStyle": "Italic",
+        "comments": "Dark Violet",
+        "favorite": "OFF"
+      },
+      "favoriteSettings": {
+        "background": "Glacial Blue",
+        "main": "Sakura",
+        "highlight": "Ultra Violet",
+        "focusBorder": "ON",
+        "fontStyle": "Italic",
+        "comments": "Dark Magenta",
+        "favorite": "Nebula Oni (Pegasus)"
+      }
+    },
+  
+    "editor.bracketPairColorization.enabled": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.linkedEditing": true,
+    "editor.fontSize": 13,
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.python",
+      "editor.formatOnType": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[c]": {
+      "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.external.windowsExec": "",
+    "terminal.integrated.profiles.windows": {
+      "PowerShell": {
+        "source": "PowerShell",
+        "icon": "terminal-powershell"
+      },
+      "Command Prompt": {
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ],
+        "args": [],
+        "icon": "terminal-cmd"
+      },
+      "Git Bash": {
+        "source": "Git Bash",
+        "icon": "github",
+        "color": "terminal.ansiGreen"
+      },
+      "kali-linux (WSL)": {
+        "path": "C:\\WINDOWS\\System32\\wsl.exe",
+        "args": ["-d", "kali-linux"]
+      }
+    },
+    "code-runner.executorMap": {
+      "javascript": "node",
+      // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+      "java": "cd $dir && javac -d bytecodes $fileName && java -cp bytecodes $fileNameWithoutExt",
+      // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt.java",
+      // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt", -->Eii taa default powershell ee code runner use korar extension
+      // "c": "gcc -o $fileNameWithoutExt $fileName &&./$fileNameWithoutExt", //Custom ami likhechilam baa modify korechilam
+      "c": "cd $dirWithoutTrailingSlash && gcc $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+      // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt", -->Eii taa default powershell ee code runner use korar extension
+      // "cpp": "g++ -o $fileNameWithoutExt $fileName &&./$fileNameWithoutExt",//Custom ami likhechilam baa modify korechilam
+      "cpp": "cd $dirWithoutTrailingSlash && g++ -std=c++11 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+      "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "php": "php",
+      // "python": "python -u", -->Eii taa default powershell ee code runner use korar extension
+      // "python": "cd $dirname && python \"$fileName\"",
+      "python": "python -u",
+      "perl": "perl",
+      "perl6": "perl6",
+      "ruby": "ruby",
+      "go": "go run",
+      "lua": "lua",
+      "groovy": "groovy",
+      "powershell": "powershell -ExecutionPolicy ByPass -File",
+      "bat": "cmd /c",
+      "shellscript": "bash",
+      "fsharp": "fsi",
+      "csharp": "scriptcs",
+      "vbscript": "cscript //Nologo",
+      "typescript": "ts-node",
+      "coffeescript": "coffee",
+      "scala": "scala",
+      "swift": "swift",
+      "julia": "julia",
+      "crystal": "crystal",
+      "ocaml": "ocaml",
+      "r": "Rscript",
+      "applescript": "osascript",
+      "clojure": "lein exec",
+      "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+      "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+      "racket": "racket",
+      "scheme": "csi -script",
+      "ahk": "autohotkey",
+      "autoit": "autoit3",
+      "dart": "dart",
+      "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+      "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+      "haskell": "runhaskell",
+      "nim": "nim compile --verbosity:0 --hints:off --run",
+      "lisp": "sbcl --script",
+      "kit": "kitc --run",
+      "v": "v run",
+      "sass": "sass --style expanded",
+      "scss": "scss --style expanded",
+      "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+      "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "workbench.productIconTheme": "fluent-icons",
+    "files.autoSave": "onFocusChange",
+    "editor.wordWrap": "on",
+    "editor.tabCompletion": "on",
+    "breadcrumbs.enabled": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[cpp]": {
+      "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "editor.inlineSuggest.enabled": true,
+    /*Power mode Configuration*/
+    "editor.cursorBlinking": "expand",
+    "powermode.enabled": true,
+    "powermode.presets": "flames",
+    "powermode.shake.intensity": 0,
+    "powermode.combo.counterSize": 0,
+    "powermode.combo.timeout": 10000,
+    "powermode.explosions.duration": 100000000,
+    "powermode.explosions.frequency": 1,
+    "glassit.alpha": 175,
+    "markdown.experimental.validate.enabled": true,
+    "synthwave84blues.brightness": "0.45",
+    "terminal.integrated.fontFamily": "FuraMono Nerd Font",
+    "vscode_custom_css.imports": [
+      "file:///C:/Users/91629/.vscode/extensions/thecodemonkey.synthwave-x-fluoromachine-epic-animations-1.4.13/synthwave-x-fluoromachine.css",
+      "file:///C:/Users/91629/.vscode/extensions/thecodemonkey.synthwave-x-fluoromachine-epic-animations-1.4.13/epic-80s-transitions.css"
+    ],
+    "terminal.integrated.gpuAcceleration": "off",
+    "security.workspace.trust.startupPrompt": "always",
+    "[java]": {
+      "editor.defaultFormatter": "redhat.java"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.commandCenter": true,
+    "window.doubleClickIconToClose": true,
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.allowMnemonics": true,
+    "window.menuBarVisibility": "compact",
+    /*Indent Rainbow*/
+    //   "indentRainbow.colors": [
+    //     "rgba(16,16,16,0.1)",
+    //     "rgba(16,16,16,0.3)",
+    //     "rgba(16,16,16,0.6)",
+    //     "rgba(16,16,16,0.4)",
+    //     "rgba(16,16,16,0.2)"
+    // ],
+    //   "indentRainbow.colors": [
+    //       "rgba(255, 0 , 0,0.3)",
+    //   "rgba(255, 127, 0,0.3)",
+    //   "rgba(255, 255, 0,0.3)",
+    //   "rgba(0, 255, 0,0.3)",
+    //   "rgba(0, 0, 255,0.3)",
+    //   "rgba(75, 0, 130,0.3)",
+    //   "rgba(148,0,211,0.3)"
+    // ],
+    // "indentRainbow.colors": [
+    //   "rgba(165, 153, 233,0.5)",
+    //   "rgba(165, 153, 233,0.4)",
+    //   "rgba(165, 153, 233,0.3)",
+    //   "rgba(165, 153, 233,0.2)",
+    //   "rgba(165, 153, 233,0.1)"
+    // ],
+    // "indentRainbow.colors": [
+    //   "rgba(16,16,16,0.1)",
+    //   "rgba(16,16,16,0.3)",
+    //   "rgba(16,16,16,0.6)",
+    //   "rgba(16,16,16,0.4)",
+    //   "rgba(16,16,16,0.2)"
+    // ]
+    // Defining custom colors instead of default "Rainbow" for dark backgrounds.
+    // Using the light mode
+    "indentRainbow.indicatorStyle": "light",
+    // we use a simple 1 pixel wide line
+    "indentRainbow.lightIndicatorStyleLineWidth": 1,
+    //  the same colors as above but more visible
+    "indentRainbow.colors": [
+      "rgba(255,255,64,0.3)",
+      "rgba(127,255,127,0.3)",
+      "rgba(255,127,255,0.3)",
+      "rgba(79,236,236,0.3)"
+    ],
+  
+    // The indent color if the number of spaces is not a multiple of "tabSize".
+    // "indentRainbow.errorColor": "rgba(128,32,32,0.6)",
+  
+    // The indent color when there is a mix between spaces and tabs.
+    // To be disabled this coloring set this to an empty string.
+    // "indentRainbow.tabmixColor": "rgba(128,32,96,0.6)",
+    "indentRainbow.excludedLanguages": ["javascript"],
+    "indentRainbow.ignoreErrorLanguages": ["*"],
+    "indentRainbow.colorOnWhiteSpaceOnly": true,
+    "workbench.sideBar.location": "right",
+    /*Indent Rainbow*/
+    "terminal.integrated.smoothScrolling": true,
+    "ipynb.experimental.pasteImages.enabled": true,
+  "editor.experimental.pasteActions.enabled": true,
+  "workbench.colorTheme": "Jetbrains New Dark Theme",
+  "editor.minimap.enabled": false,
+  "aws.suppressPrompts": {
+    "regionAddAutomatically": true
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          // the following elements will be in italic
+          //   (=Fira Code iScript)
+          // "comment",
+          "keyword.control.import.js", // import
+          "keyword.control.export.js", // export
+          "keyword.control.from.js", // from
+          "constant", // String, Number, Boolean…, this, super
+          "storage.modifier", // static keyword
+          "storage.type.class", // class keyword
+          "storage.type.php", // typehints in methods keyword
+          "keyword.other.new.php", // new
+          "entity.other.attribute-name", // html attributes
+          "fenced_code.block.language.markdown" // markdown language modifier
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          // the following elements will be displayed in bold
+          "entity.name.type.class", // class names
+          /*  --My-Code--        Starts  */
+          /*
+          "keyword.control.import.js", // import
+          "keyword.control.export.js", // export
+          "keyword.control.from.js",
+          */
+          // "keyword", //import, export, return…
+          "keyword.control.import.js", // import
+          "keyword.control.export.js", // export
+          "keyword.control.from.js",
+          "storage.modifier", //static keyword
+          "storage.type", //class keyword
+          "support.class.builtin",
+          // "keyword.control",
+          "keyword.control.default.js",
+          "constant.language",
+          "entity.other.attribute-name",
+          "entity.name.method"
+          /*
+           "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          "storage.modifier", //static keyword
+          "storage.type", //class keyword
+          "support.class.builtin",
+          "keyword.control",
+          "constant.language",
+          "entity.other.attribute-name",
+          "entity.name.method"
+          */
+  
+          /* Ends */
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "constant",
+          "storage.type.function.js",
+          "keyword.control",
+          "storage",
+          "meta.return-type"
+        ],
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": [
+          // the following elements will be displayed in bold and italic
+          "entity.name.section.markdown" // markdown headlines
+        ],
+        "settings": {
+          "fontStyle": "italic bold"
+        }
+      },
+      {
+        "scope": [
+          // the following elements will be excluded from italics
+          //   (VSCode has some defaults for italics)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json",
+          "comment.block",
+          "entity.other.attribute-name.class.css"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "redhat.telemetry.enabled": false,
+  "git.enableSmartCommit": true,
+  "workbench.statusBar.visible": false
+}
+  

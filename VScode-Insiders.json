@@ -1,0 +1,783 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.productIconTheme": "fluent-icons",
+    "editor.mouseWheelZoom": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator} ProLifeSurfer",
+    "breadcrumbs.enabled": false,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "workbench.iconTheme": "material-icon-theme",
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "editor.wordWrap": "on",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.editor.wrapTabs": true,
+    "code-runner.executorMap": {
+      "javascript": "node",
+      "java": "cd $dir && javac $fileName && java $fileNameWithoutExt", //--> eta default powershell ee
+      // "java": "cd \"$workspaceRoot\\\" && javac --source-path src -d bin src\\$fileName && java -cp bin $fileNameWithoutExt",
+      // "java": "cd $dir && javac --source-path src -d bin $fileName && java -cp bin $fileNameWithoutExt", //-->working fine
+      // "java": "cd $dir && javac --source-path src -d bin $fileName && java -cp bin $fileNameWithoutExt",
+      // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt", //-->Eii taa default powershell ee code runner use korar extension
+      // "c": "gcc -o $fileNameWithoutExt $fileName &&./$fileNameWithoutExt", //Custom ami likhechilam baa modify korechilam
+      "c": "cd $dirWithoutTrailingSlash && gcc $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+      // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt", -->Eii taa default powershell ee code runner use korar extension
+      // "cpp": "g++ -o $fileNameWithoutExt $fileName &&./$fileNameWithoutExt",//Custom ami likhechilam baa modify korechilam
+      "cpp": "cd $dirWithoutTrailingSlash && g++ -std=c++11 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+      "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "php": "php",
+      // "python": "python -u", -->Eii taa default powershell ee code runner use korar extension
+      "python": "python \"$fileName\"",
+      "perl": "perl",
+      "perl6": "perl6",
+      "ruby": "ruby",
+      "go": "go run",
+      "lua": "lua",
+      "groovy": "groovy",
+      "powershell": "powershell -ExecutionPolicy ByPass -File",
+      "bat": "cmd /c",
+      "shellscript": "bash",
+      "fsharp": "fsi",
+      "csharp": "scriptcs",
+      "vbscript": "cscript //Nologo",
+      "typescript": "ts-node",
+      "coffeescript": "coffee",
+      "scala": "scala",
+      "swift": "swift",
+      "julia": "julia",
+      "crystal": "crystal",
+      "ocaml": "ocaml",
+      "r": "Rscript",
+      "applescript": "osascript",
+      "clojure": "lein exec",
+      "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+      "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+      "racket": "racket",
+      "scheme": "csi -script",
+      "ahk": "autohotkey",
+      "autoit": "autoit3",
+      "dart": "dart",
+      "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+      "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+      "haskell": "runhaskell",
+      "nim": "nim compile --verbosity:0 --hints:off --run",
+      "lisp": "sbcl --script",
+      "kit": "kitc --run",
+      "v": "v run",
+      "sass": "sass --style expanded",
+      "scss": "scss --style expanded",
+      "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+      "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "code-runner.saveFileBeforeRun": true,
+    "marquee.configuration.background": 0,
+    "marquee.configuration.proxy": "",
+    "marquee.configuration.workspaceLaunch": false,
+    "marquee.widgets.projects.workspaceFilter": "",
+    "marquee.widgets.projects.openProjectInNewWindow": false,
+    "marquee.widgets.github.language": "",
+    "marquee.widgets.github.spoken": "",
+    "marquee.widgets.github.trendFilter": null,
+    "marquee.widgets.weather.city": "",
+    "marquee.widgets.todo.todoFilter": "",
+    "marquee.widgets.todo.hide": false,
+    "marquee.widgets.todo.showArchived": false,
+  
+    // "editor.fontFamily": "'Fira Code iScript','Operator Mono Lig'",
+    "editor.fontFamily": "'Operator Mono Light'",
+  
+    "editor.fontLigatures": true,
+    // For Fira Code iScript settings
+    // "editor.fontFamily": "'Fira Code iScript', 'Fira code', 'cascadia code', Consolas, 'Courier New', monospace",
+    // "editor.fontSize": 13,
+    // // "editor.fontLigatures": "Fira code",
+    // "editor.fontFamily": "Fira Code iScript",
+    // "editor.fontLigatures": true,
+    // "editor.tokenColorCustomizations": {
+    //     "textMateRules": [
+    //         {
+    //             "scope": [
+    //                 //following will be in italic
+    //                 "comment",
+    //                 "emphasis",
+    //                 "entity.name.method.js",
+    //                 "entity.name.class.js",
+    //                 "entity.name.tag.doctype",
+    //               "entity.other.attribute-name",
+    //               "entity.other.attribute-name.tag.jade",
+    //               "entity.other.attribute-name.tag.pug",
+    //               "keyword",
+    //               "keyword.control",
+    //               "keyword.operator.comparison",
+    //               "keyword.control.flow.js",
+    //               "keyword.control.flow.ts",
+    //               "keyword.control.flow.tsx",
+    //               "keyword.control.ruby",
+    //               "keyword.control.module.ruby",
+    //               "keyword.control.class.ruby",
+    //               "keyword.control.def.ruby",
+    //               "keyword.control.loop.js",
+    //               "keyword.control.loop.ts",
+    //               "keyword.control.import.js",
+    //               "keyword.control.import.ts",
+    //               "keyword.control.import.tsx",
+    //               "keyword.control.from.js",
+    //               "keyword.control.from.ts",
+    //               "keyword.control.from.tsx",
+    //               "keyword.operator.expression.delete",
+    //               "keyword.operator.new",
+    //               "keyword.operator.expression",
+    //               "keyword.operator.cast",
+    //               "keyword.operator.relational",
+    //               "keyword.operator.sizeof",
+    //               "keyword.operator.logical.python",
+    //               "italic",
+    //               "markup.italic",
+    //               "markup.quote",
+    //               "markup.changed",
+    //               "markup.italic.markdown",
+    //               "markup.quote.markdown",
+    //               "markup.deleted.diff",
+    //               "markup.inserted.diff",
+    //               "meta.delimiter.period",
+    //               "meta.diff.header.git",
+    //               "meta.diff.header.from-file",
+    //               "meta.diff.header.to-file",
+    //               "meta.tag.sgml.doctype",
+    //               "meta.var.expr",
+    //               "meta.class meta.method.declaration meta.var.expr storage.type.js",
+    //               "meta.decorator punctuation.decorator",
+    //               "meta.selector",
+    //               "punctuation.accessor",
+    //               "punctuation.definition.comment",
+    //               "punctuation.definition.template-expression.begin",
+    //               "punctuation.definition.template-expression.end",
+    //               "punctuation.section.embedded",
+    //               "quote",
+    //               "source.js constant.other.object.key.js string.unquoted.label.js",
+    //               "source.go keyword.package.go",
+    //               "source.go keyword.import.go",
+    //               "source.go keyword.function.go",
+    //               "source.go keyword.type.go",
+    //               "source.go keyword.struct.go",
+    //               "source.go keyword.interface.go",
+    //               "source.go keyword.const.go",
+    //               "source.go keyword.var.go",
+    //               "source.go keyword.map.go",
+    //               "source.go keyword.channel.go",
+    //               "source.go keyword.control.go",
+    //               "storage",
+    //               "storage.type",
+    //               "storage.modifier",
+    //               "storage.type.property.js",
+    //               "storage.type.property.ts",
+    //               "storage.type.property.tsx",
+    //               "tag.decorator.js entity.name.tag.js",
+    //               "tag.decorator.js",
+    //               "text.html.basic entity.other.attribute-name.html",
+    //               "text.html.basic entity.other.attribute-name",
+    //               "variable.language",
+    //               "variable.other.object.property"
+    //             ],
+    //             "settings": {
+    //             //   "fontStyle": "italic bold"
+    //             //   "fontStyle": "bold"
+    //               "fontStyle": "italic"
+    //             }
+    //         }
+    //     ]
+    // },
+    // "editor.tokenColorCustomizations": {
+    //     "textMateRules": [{
+    //             "name": "Comment",
+    //             "scope": [
+    //                 "comment",
+    //                 "punctuation.definition.comment"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#4A4A4A"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "Keyword, Storage",
+    //             "scope": [
+    //                 "Keyword",
+    //                 "Storage"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "Keyword Control",
+    //             "scope": [
+    //                 "keyword.control"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic"
+    //             }
+    //         },
+  
+    //         {
+    //             "scope": "entity.other.attribute-name",
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#78dce8"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "entity.name.method.js",
+    //             "scope": [
+    //                 "entity.name.method.js"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#82AAFF"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "Language methods",
+    //             "scope": [
+    //                 "variable.language"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#FF5370"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "HTML Attributes",
+    //             "scope": [
+    //                 "text.html.basic entity.other.attribute-name.html",
+    //                 "text.html.basic entity.other.attribute-name"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#FFCB6B"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "Decorators",
+    //             "scope": [
+    //                 "tag.decorator.js entity.name.tag.js",
+    //                 "tag.decorator.js punctuation.definition.tag.js"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#82AAFF"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "ES7 Bind Operator",
+    //             "scope": [
+    //                 "source.js constant.other.object.key.js string.unquoted.label.js"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#FF5370"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "Markup - Italic",
+    //             "scope": [
+    //                 "markup.italic"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": "#f07178"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "Markup - Bold-Italic",
+    //             "scope": [
+    //                 "markup.bold markup.italic",
+    //                 "markup.italic markup.bold",
+    //                 "markup.quote markup.bold",
+    //                 "markup.bold markup.italic string",
+    //                 "markup.italic markup.bold string",
+    //                 "markup.quote markup.bold string"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "bold",
+    //                 //"foreground": "#f07178"
+    //             }
+    //         },
+  
+    //         {
+    //             "name": "Markup - Quote",
+    //             "scope": [
+    //                 "markup.quote"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 //"foreground": ""
+    //             }
+    //         },
+    //         {
+    //             "scope": "variable.other",
+    //             "settings": {
+    //                 "foreground": "#82fbff"
+    //             }
+    //         },
+    //         {
+    //             "scope": "entity.name.function",
+    //             "settings": {
+    //                 "foreground": "#dfd9a8"
+    //             }
+    //         },
+    //         {
+    //             "scope": "support.function",
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 "foreground": "#dfd9a8"
+    //             }
+    //         },
+    //         {
+    //             "scope": "string",
+    //             "settings": {
+    //                 "foreground": "#CE9178"
+    //             }
+    //         },
+    //     ]
+    // },
+    "editor.cursorBlinking": "expand",
+    "terminal.integrated.cursorBlinking": true,
+    "powermode.enabled": true,
+    "powermode.presets": "flames",
+    "powermode.shake.intensity": 0,
+    "powermode.combo.counterSize": 0,
+    "powermode.combo.timeout": 10000,
+    "powermode.explosions.duration": 100000000,
+    "powermode.explosions.frequency": 1,
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "tabnine.experimentalAutoImports": true,
+    "editor.inlineSuggest.enabled": true,
+    "glassit.alpha": 205,
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.menuBarVisibility": "compact",
+    "terminal.integrated.gpuAcceleration": "off",
+    "workbench.editor.enablePreview": false,
+    "window.commandCenter": true,
+    /*
+    //This is for synth-wave animation themes
+    "vscode_custom_css.imports": [
+      "file:///C:/Users/91629/.vscode/extensions/thecodemonkey.synthwave-x-fluoromachine-epic-animations-1.4.13/synthwave-x-fluoromachine.css",
+      // "file:///C:/Users/91629/.vscode/extensions/thecodemonkey.synthwave-x-fluoromachine-epic-animations-1.4.13/epic-80s-transitions.css"
+      ]
+      */
+    "indentRainbow.indicatorStyle": "light",
+    "indentRainbow.lightIndicatorStyleLineWidth": 1,
+    "indentRainbow.ignoreErrorLanguages": ["*"],
+    "indentRainbow.colorOnWhiteSpaceOnly": true,
+    "indentRainbow.colors": [
+      "rgba(255,255,64,0.3)",
+      "rgba(127,255,127,0.3)",
+      "rgba(255,127,255,0.3)",
+      "rgba(79,236,236,0.3)"
+    ],
+    // config related to code formatting
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.formatOnSave": false,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "editor.accessibilitySupport": "off",
+    //TODO-HIGHLIGHT
+    "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+      "DEBUG:",
+      "REVIEW:",
+      {
+        "text": "NOTE:",
+        "color": "#ff0000",
+        "backgroundColor": "yellow",
+        "overviewRulerColor": "grey"
+      },
+      {
+        "text": "HACK:",
+        "color": "#000",
+        "isWholeLine": false
+      },
+      {
+        "text": "TODO:",
+        "color": "red",
+        "border": "1px solid red",
+        "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+        "backgroundColor": "rgba(0,0,0,.2)"
+        //other styling properties goes here ...
+      },
+      {
+        "text": "--My-Code--",
+        "color": "#03fc0f",
+        "border": "1px solid #c209d6",
+        "backgroundColor": "black"
+      },
+      {
+        "text": "Starts",
+        "color": "#09d6c8",
+        "border": "1px solid #c209d6",
+        "backgroundColor": "rgba(0,0,0,.2)"
+      },
+      {
+        "text": "Ends",
+        "color": "#d5f505",
+        "border": "1px solid #c209d6",
+        "backgroundColor": "rgba(0,0,0,.2)"
+      },
+      {
+        "text": "///",
+        "color": "cyan",
+        "backgroundColor": "rgba(0,0,0,.2)",
+        "border": "1px solid red"
+      },
+      {
+        "text": "imp-",
+        "color": "chartreuse",
+        "backgroundColor": "rgba(0,0,0,.2)",
+        "border": "1px solid red"
+      }
+    ],
+    "files.autoSave": "onFocusChange",
+    "[python]": {
+      "editor.formatOnType": true
+    },
+    "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.rulers": [80],
+      "editor.selectionHighlight": false,
+      "editor.suggest.snippetsPreventQuickSuggestions": false,
+      "editor.suggestSelection": "first",
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": false
+    },
+    "workbench.statusBar.visible": false,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "errorLens.fontStyleItalic": true,
+    //Fira Code iScript ==> Settings - start's
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            // the following elements will be in italic
+            //   (=Fira Code iScript)
+            // "comment",
+            "keyword.control.import.js", // import
+            "keyword.control.export.js", // export
+            "keyword.control.from.js", // from
+            "constant", // String, Number, Boolean…, this, super
+            "storage.modifier", // static keyword
+            "storage.type.class", // class keyword
+            "storage.type.php", // typehints in methods keyword
+            "keyword.other.new.php", // new
+            "entity.other.attribute-name", // html attributes
+            "fenced_code.block.language.markdown" // markdown language modifier
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            // the following elements will be displayed in bold
+            "entity.name.type.class", // class names
+            /*  --My-Code--        Starts  */
+            /*
+            "keyword.control.import.js", // import
+            "keyword.control.export.js", // export
+            "keyword.control.from.js",
+            */
+            // "keyword", //import, export, return…
+            "keyword.control.import.js", // import
+            "keyword.control.export.js", // export
+            "keyword.control.from.js",
+            "storage.modifier", //static keyword
+            "storage.type", //class keyword
+            "support.class.builtin",
+            // "keyword.control",
+            "keyword.control.default.js",
+            "constant.language",
+            "entity.other.attribute-name",
+            "entity.name.method"
+            /*
+             "comment",
+            "entity.name.type.class", //class names
+            "keyword", //import, export, return…
+            "storage.modifier", //static keyword
+            "storage.type", //class keyword
+            "support.class.builtin",
+            "keyword.control",
+            "constant.language",
+            "entity.other.attribute-name",
+            "entity.name.method"
+            */
+  
+            /* Ends */
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        },
+        {
+          "scope": [
+            "constant",
+            "storage.type.function.js",
+            "keyword.control",
+            "storage",
+            "meta.return-type"
+          ],
+          "settings": {
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": [
+            // the following elements will be displayed in bold and italic
+            "entity.name.section.markdown" // markdown headlines
+          ],
+          "settings": {
+            "fontStyle": "italic bold"
+          }
+        },
+        {
+          "scope": [
+            // the following elements will be excluded from italics
+            //   (VSCode has some defaults for italics)
+            "invalid",
+            "keyword.operator",
+            "constant.numeric.css",
+            "keyword.other.unit.px.css",
+            "constant.numeric.decimal.js",
+            "constant.numeric.json",
+            "comment.block",
+            "entity.other.attribute-name.class.css"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    },
+    /*  --My-Code--        Starts  */
+    // "editor.tokenColorCustomizations": {
+    //   "textMateRules": [
+    //     {
+    //       "name": "Comment",
+    //       "scope": ["comment", "punctuation.definition.comment"],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#4A4A4A"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "Keyword, Storage",
+    //       "scope": ["Keyword", "Storage"],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "Keyword Control",
+    //       "scope": ["keyword.control"],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //       }
+    //     },
+  
+    //     {
+    //       "scope": "entity.other.attribute-name",
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#78dce8"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "entity.name.method.js",
+    //       "scope": ["entity.name.method.js"],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#82AAFF"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "Language methods",
+    //       "scope": ["variable.language"],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#FF5370"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "HTML Attributes",
+    //       "scope": [
+    //         "text.html.basic entity.other.attribute-name.html",
+    //         "text.html.basic entity.other.attribute-name"
+    //       ],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#FFCB6B"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "Decorators",
+    //       "scope": [
+    //         "tag.decorator.js entity.name.tag.js",
+    //         "tag.decorator.js punctuation.definition.tag.js"
+    //       ],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#82AAFF"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "ES7 Bind Operator",
+    //       "scope": [
+    //         "source.js constant.other.object.key.js string.unquoted.label.js"
+    //       ],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#FF5370"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "Markup - Italic",
+    //       "scope": ["markup.italic"],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": "#f07178"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "Markup - Bold-Italic",
+    //       "scope": [
+    //         "markup.bold markup.italic",
+    //         "markup.italic markup.bold",
+    //         "markup.quote markup.bold",
+    //         "markup.bold markup.italic string",
+    //         "markup.italic markup.bold string",
+    //         "markup.quote markup.bold string"
+    //       ],
+    //       "settings": {
+    //         "fontStyle": "bold"
+    //         //"foreground": "#f07178"
+    //       }
+    //     },
+  
+    //     {
+    //       "name": "Markup - Quote",
+    //       "scope": ["markup.quote"],
+    //       "settings": {
+    //         "fontStyle": "italic"
+    //         //"foreground": ""
+    //       }
+    //     },
+    //     {
+    //       "scope": "variable.other",
+    //       "settings": {
+    //         "foreground": "#82fbff"
+    //       }
+    //     },
+    //     {
+    //       "scope": "entity.name.function",
+    //       "settings": {
+    //         "foreground": "#dfd9a8"
+    //       }
+    //     },
+    //     {
+    //       "scope": "support.function",
+    //       "settings": {
+    //         "fontStyle": "italic",
+    //         "foreground": "#dfd9a8"
+    //       }
+    //     },
+    //     {
+    //       "scope": "string",
+    //       "settings": {
+    //         "foreground": "#CE9178"
+    //       }
+    //     }
+    //   ]
+    // },
+  
+    /* Ends */
+    "githubPullRequests.createOnPublishBranch": "never",
+    "redhat.telemetry.enabled": false,
+    "terminal.explorerKind": "both",
+    "terminal.external.windowsExec": "C:\\Program Files\\WindowsApps\\KaliLinux.54290C8133FEE_1.2023.2.0_x64__ey8k8hqnwqnmg\\Kali.exe",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.profiles.windows": {
+      "PowerShell": {
+        "source": "PowerShell",
+        "icon": "terminal-powershell"
+      },
+      "Command Prompt": {
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ],
+        "args": [],
+        "icon": "terminal-cmd"
+      },
+      "Git Bash": {
+        "source": "Git Bash"
+      },
+      "kali-linux (WSL)": {
+        "path": "C:\\WINDOWS\\System32\\wsl.exe",
+        "args": ["-d", "kali-linux"]
+      }
+    },
+    "workbench.sideBar.location": "right",
+    "git.enableSmartCommit": true,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "One Dark Pro Darker"
+    // Fira Code iScript ==> Settings - End's
+}
+  
