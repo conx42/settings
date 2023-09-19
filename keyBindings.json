@@ -25,5 +25,9 @@
     {
         "key": "alt+t",
         "command": "workbench.action.toggleTabsVisibility"
+    },
+    {
+        "key": "alt+n",
+        "command": "code-runner.run"
     }
 ]
