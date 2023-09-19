@@ -3,7 +3,7 @@
 	[
 		"Vintage",
 	],
-	"font_face": "Furamono Nerd Font", 
-	"font_size": 11,
+	"font_face": "", 
+	"font_size": 13,
 	"auto_complete": false,
 }

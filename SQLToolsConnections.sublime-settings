@@ -1,0 +1,18 @@
+// List all your connections to DBs here
+{
+	"connections": {
+	"add@localhost": {
+      "type"    : "mysql",
+      "host"    : "127.0.0.1",
+      "port"    :  3306,
+      "database": "tabu",
+      "username": "root",
+      // use of password for MySQL is not recommended (use "defaults-extra-file" or "login-path")
+      "password": "root",  // you will get a security warning in the output
+      // "defaults-extra-file": "/path/to/defaults_file_with_password",  // use [client] or [mysql] section
+      // "login-path": "your_login_path",  // login path in your ".mylogin.cnf"
+      "encoding": "utf-8"
+    },
+	},
+	"default": null
+}
