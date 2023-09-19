@@ -1,0 +1,5 @@
+{
+	// "shell_cmd": "make"
+   "cmd": ["python3", "-u", "$file"],
+
+}

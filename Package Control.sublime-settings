@@ -1,0 +1,27 @@
+{
+	"bootstrapped": true,
+	"target":"run_existing_window_command",
+	"id":"repl_python_run",
+	"file":"config/Python/Main.sublime-menu",
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"auto-save",
+		"AutoPEP8",
+		"CppFastOlympicCoding",
+		"Easy Import",
+		"JavaIME",
+		"LSP",
+		"LSP-json",
+		"LSP-pylsp",
+		"Package Control",
+		"SublimeAStyleFormatter",
+		"SublimeLinter",
+		"SublimeLinter-contrib-zig-check",
+		"SublimeLinter-javac",
+		"SublimeREPL",
+		"Terminus",
+	],
+}

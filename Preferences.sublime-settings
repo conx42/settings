@@ -1,0 +1,9 @@
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"font_face": "Furamono Nerd Font", 
+	"font_size": 11,
+	"auto_complete": false,
+}
